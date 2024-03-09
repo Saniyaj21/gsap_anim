@@ -1,11 +1,15 @@
 import "./App.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef } from "react";
+
 
 function App() {
 	const box = useRef(null);
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+	}, [])
+	
 
 	gsap.to(".box", {
 		scrollTrigger: {
